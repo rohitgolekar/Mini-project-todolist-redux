@@ -1,0 +1,62 @@
+.loginBox {
+  box-shadow: 2px 2px 20px 5px #4e151a;
+}
+
+.delete {
+  text-decoration: line-through !important;
+}
+
+.userDetails {
+  height: 250px;
+}
+
+.tododetails {
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 0px;
+  background-color: #212529;
+}
+
+.addtodo {
+  position: relative;
+}
+
+.addtodo i {
+  position: absolute;
+  right: 5px;
+  bottom: 20px;
+  border-radius: 8px;
+}
+
+.btnfilter {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #a52a2a;
+}
+
+.btnfilter:hover {
+  background: #a52a2a;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.fa-check-double {
+  padding: 8px 12px;
+  margin: 0px 5px;
+  border-radius: 10px;
+}
+
+.fa-times {
+  padding: 8px 14px;
+  margin: 0px 5px;
+  border-radius: 10px;
+}
+
+.fa-thumbs-up {
+  padding: 8px 12px;
+  margin: 0px 5px;
+  border-radius: 10px;
+}
+
+li:nth-child(odd) {
+  background-color: tan;
+}
