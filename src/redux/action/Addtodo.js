@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../../App.css"
 import { connect } from 'react-redux';
-import { addTodos } from "../reducer/reducer";
+import { getAddTodo } from "../reducer/reducer";
 
 const mapStateToProps = (state) => {
     return {
@@ -11,23 +11,23 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTodo: (obj) => dispatch(addTodos(obj)),
+        addTodo: (obj) => dispatch(getAddTodo(obj)),
     }
 }
 
 function AddTodo(props) {
-    const [todo, setTodo] = useState("");
+    const [Todo, setTodo] = useState("");
 
     const handleChange = (e) => {
         setTodo(e.target.value);
     }
 
     const add = () => {
-        if(todo !== "") {
+        if(Todo !== "") {
 
             props.addTodo({
                 id: Math.floor(Math.random() * 1000),
-                item: todo,
+                item: Todo,
                 completed: false
             })
             setTodo("");
@@ -42,7 +42,7 @@ function AddTodo(props) {
             <div className="row">
                 <div className="col-md-10 mx-auto text-center">
                     <div className="form-group">
-                        <input type="text" onChange={(e) => handleChange(e)} value={todo} className="form-control" placeholder="Enter Todo" />
+                        <input type="text" onChange={(e) => handleChange(e)} value={Todo} className="form-control" placeholder="Enter Todo" />
                     </div>
 
                     <div className="form-group my-3 addtodo">

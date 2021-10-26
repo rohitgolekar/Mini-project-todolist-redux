@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../../App.css";
 import { connect } from 'react-redux'
-import { addTodos, removeTodos, completeTodos } from "../reducer/reducer";
+import { getAddTodo, getRemoveTodo, getCompleteTodo } from "../reducer/reducer";
 import TodoList from './TodoList';
 
 const mapStateToProps = (state) => {
@@ -12,13 +12,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTodo: (obj) => dispatch(addTodos(obj)),
-        removeTodo: (id) => dispatch(removeTodos(id)),
-        completeTodo: (id) => dispatch(completeTodos(id)),
+        addTodo: (obj) => dispatch(getAddTodo(obj)),
+        removeTodo: (id) => dispatch(getRemoveTodo(id)),
+        completeTodo: (id) => dispatch(getCompleteTodo(id)),
     }
 }
 function VisibilityFilters(props) {
-    console.log("hi", props.todos.reducer);
 
     const [sort, setSort] = useState("incomplete")
     return (
