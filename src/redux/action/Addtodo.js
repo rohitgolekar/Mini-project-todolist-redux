@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../../App.css"
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'; 
 import { getAddTodo } from "../reducer/reducer";
 
 const mapStateToProps = (state) => {
@@ -36,7 +36,6 @@ function AddTodo(props) {
         }
     }
 
-    // console.log("props from store", props);
     return (
         <>
             <div className="row">
@@ -54,5 +53,4 @@ function AddTodo(props) {
     )
 }
 
-//we can use connect method to connect this component to redux store
 export default connect(mapStateToProps, mapDispatchToProps)(AddTodo)

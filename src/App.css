@@ -60,3 +60,13 @@
 li:nth-child(odd) {
   background-color: tan;
 }
+
+.search {
+  width: 68%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+ul {
+  padding-left: 0px;
+}

@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 function VisibilityFilters(props) {
 
+    const [search, setSearch] = useState("");
     const [sort, setSort] = useState("incomplete")
     return (
         <>
@@ -32,10 +33,16 @@ function VisibilityFilters(props) {
 
             <div className="row my-3">
                 <div className="col-md-10 text-center mx-auto">
-
+                    <input className="form-control my-2 search" type="text" placeholder="Search Todo" onChange={(event) => { setSearch(event.target.value) }} />
                     <ul>
                         {
-                            props.todos.reducer.length > 0 && sort === "incomplete" ? props.todos.reducer.map((item) => {
+                            props.todos.reducer.length > 0 && sort === "incomplete" ? props.todos.reducer.filter((item) => {
+                                if (search === "") {
+                                    return item
+                                } else if (item.item.toLowerCase().includes(search.toLowerCase())) {
+                                    return item
+                                }
+                            }).map((item) => {
                                 return (
                                     item.completed === false &&
                                     <TodoList
@@ -50,7 +57,13 @@ function VisibilityFilters(props) {
                         {/* For completed todos */}
 
                         {
-                            props.todos.reducer.length > 0 && sort === "completed" ? props.todos.reducer.map((item) => {
+                            props.todos.reducer.length > 0 && sort === "completed" ? props.todos.reducer.filter((item) => {
+                                if (search === "") {
+                                    return item
+                                } else if (item.item.toLowerCase().includes(search.toLowerCase())) {
+                                    return item
+                                }
+                            }).map((item) => {
                                 return (
                                     item.completed === true &&
                                     <TodoList
@@ -65,7 +78,13 @@ function VisibilityFilters(props) {
                         {/* For All todos */}
 
                         {
-                            props.todos.reducer.length > 0 && sort === "all" ? props.todos.reducer.map((item) => {
+                            props.todos.reducer.length > 0 && sort === "all" ? props.todos.reducer.filter((item) => {
+                                if (search === "") {
+                                    return item
+                                } else if (item.item.toLowerCase().includes(search.toLowerCase())) {
+                                    return item
+                                }
+                            }).map((item) => {
                                 return (
                                     <TodoList
                                         key={item.id}
@@ -82,4 +101,5 @@ function VisibilityFilters(props) {
     )
 }
 
+//we can use connect method to connect this component to redux store
 export default connect(mapStateToProps, mapDispatchToProps)(VisibilityFilters)

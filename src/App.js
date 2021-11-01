@@ -1,17 +1,10 @@
 import './App.css';
-import Login from './redux/action/Login';
-import {useSelector} from 'react-redux';
-import {selectUser} from "./redux/reducer/loginreducer";
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 
 function App() {
-
-  const user = useSelector(selectUser);
   return (
     <div className="App">
-      {
-        user ? <Header/> : <Login />
-      }
+      <Navbar />
     </div>
   );
 }
