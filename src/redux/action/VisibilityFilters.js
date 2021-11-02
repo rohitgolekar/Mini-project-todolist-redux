@@ -24,77 +24,79 @@ function VisibilityFilters(props) {
     return (
         <>
             <div className="row my-3">
-                <div className="col-md-10 text-center mx-auto">
-                    <button className="mx-2 btn btnfilter" onClick={() => setSort("incomplete")}>Incompleted</button>
-                    <button className="mx-2 btn btnfilter" onClick={() => setSort("completed")}>Completed</button>
-                    <button className="mx-2 btn btnfilter" onClick={() => setSort("all")}>All</button>
+                <div className="col-md-10 text-center mx-auto filterbtn">
+                    <button className="mx-2 btnfilter active" onClick={() => setSort("incomplete")}>Incompleted</button>
+                    <button className="mx-2 btnfilter" onClick={() => setSort("completed")}>Completed</button>
+                    <button className="mx-2 btnfilter" onClick={() => setSort("all")}>All</button>
                 </div>
             </div>
 
             <div className="row my-3">
-                <div className="col-md-10 text-center mx-auto">
+                <div className="col-md-10 mt-2 text-center mx-auto displaytodo">
                     <input className="form-control my-2 search" type="text" placeholder="Search Todo" onChange={(event) => { setSearch(event.target.value) }} />
-                    <ul>
-                        {
-                            props.todos.reducer.length > 0 && sort === "incomplete" ? props.todos.reducer.filter((item) => {
-                                if (search === "") {
-                                    return item
-                                } else if (item.item.toLowerCase().includes(search.toLowerCase())) {
-                                    return item
+                    <div className="row">
+                        <ul>
+                            {
+                                props.todos.reducer.length > 0 && sort === "incomplete" ? props.todos.reducer.filter((item) => {
+                                    if (search === "") {
+                                        return item
+                                    } else if (item.item.toLowerCase().includes(search.toLowerCase())) {
+                                        return item
+                                    }
+                                }).map((item) => {
+                                    return (
+                                        item.completed === false &&
+                                        <TodoList
+                                            key={item.id}
+                                            item={item}
+                                            removeTodo={props.removeTodo}
+                                            completeTodo={props.completeTodo} />
+                                    )
                                 }
-                            }).map((item) => {
-                                return (
-                                    item.completed === false &&
-                                    <TodoList
-                                        key={item.id}
-                                        item={item}
-                                        removeTodo={props.removeTodo}
-                                        completeTodo={props.completeTodo} />
-                                )
-                            }
-                            ) : null}
+                                ) : null}
 
-                        {/* For completed todos */}
+                            {/* For completed todos */}
 
-                        {
-                            props.todos.reducer.length > 0 && sort === "completed" ? props.todos.reducer.filter((item) => {
-                                if (search === "") {
-                                    return item
-                                } else if (item.item.toLowerCase().includes(search.toLowerCase())) {
-                                    return item
+                            {
+                                props.todos.reducer.length > 0 && sort === "completed" ? props.todos.reducer.filter((item) => {
+                                    if (search === "") {
+                                        return item
+                                    } else if (item.item.toLowerCase().includes(search.toLowerCase())) {
+                                        return item
+                                    }
+                                }).map((item) => {
+                                    return (
+                                        item.completed === true &&
+                                        <TodoList
+                                            key={item.id}
+                                            item={item}
+                                            removeTodo={props.removeTodo}
+                                            completeTodo={props.completeTodo} />
+                                    )
                                 }
-                            }).map((item) => {
-                                return (
-                                    item.completed === true &&
-                                    <TodoList
-                                        key={item.id}
-                                        item={item}
-                                        removeTodo={props.removeTodo}
-                                        completeTodo={props.completeTodo} />
-                                )
-                            }
-                            ) : null}
+                                ) : null}
 
-                        {/* For All todos */}
+                            {/* For All todos */}
 
-                        {
-                            props.todos.reducer.length > 0 && sort === "all" ? props.todos.reducer.filter((item) => {
-                                if (search === "") {
-                                    return item
-                                } else if (item.item.toLowerCase().includes(search.toLowerCase())) {
-                                    return item
+                            {
+                                props.todos.reducer.length > 0 && sort === "all" ? props.todos.reducer.filter((item) => {
+                                    if (search === "") {
+                                        return item
+                                    } else if (item.item.toLowerCase().includes(search.toLowerCase())) {
+                                        return item
+                                    }
+                                }).map((item) => {
+                                    return (
+                                        <TodoList
+                                            key={item.id}
+                                            item={item}
+                                            removeTodo={props.removeTodo}
+                                            completeTodo={props.completeTodo} />
+                                    )
                                 }
-                            }).map((item) => {
-                                return (
-                                    <TodoList
-                                        key={item.id}
-                                        item={item}
-                                        removeTodo={props.removeTodo}
-                                        completeTodo={props.completeTodo} />
-                                )
-                            }
-                            ) : null}
-                    </ul>
+                                ) : null}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </>

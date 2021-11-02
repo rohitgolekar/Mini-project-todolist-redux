@@ -1,19 +1,106 @@
+/*-----LOGIN START-------*/
+
+.loginSection {
+  padding: 30px 0px;
+}
+
 .loginBox {
-  box-shadow: 2px 2px 20px 5px #4e151a;
+  box-shadow: 2px 2px 20px 5px #41464b;
+  margin: 50px 0px;
+  background-color: rebeccapurple;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;  
 }
 
-.delete {
-  text-decoration: line-through !important;
+.loginBox h4 {
+  background-color: wheat;
+  color: rebeccapurple;
+  border-radius: 15px;
+  font-weight: 700;
+  box-shadow: 0px 15px 15px 0px #212529;
 }
 
+.loginBox .form-group input {
+  box-shadow: 0px 20px 15px 0px indigo;
+}
+
+.loginBox .form-control {
+  background-color: rebeccapurple;
+  color: wheat;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.loginBox .form-control::placeholder { 
+  color: rgb(179, 168, 149);
+  opacity: 1; 
+}
+
+.loginBox .btn {
+  background-color: wheat;
+  border-radius: 10px;
+  color: rebeccapurple;
+  font-weight: 700;
+  box-shadow: 0px 15px 15px 0px #212529;
+}
+
+/*-----LOGIN END-------*/
+
+/*-----USERDETAILS START-------*/
 .userDetails {
-  height: 250px;
+  color: wheat;
+    border-radius: 30px;
+    padding: 20px 30px 25px 30px;
+    background-color: indigo;
+    box-shadow: 0px 20px 18px 0px #991f1f;
 }
+
+.userDetails label {
+  text-shadow: 10px 8px #212529;
+  font-size: 20px;
+  font-weight: 800;
+  color: wheat;
+}
+
+.userDetails span{
+  text-align: center;
+  justify-content: center;
+  margin-left: 260px;
+  font-size: 25px;
+  color: #f1f1f1;
+  font-weight: 600;
+  text-shadow: 10px 8px #212529;
+}
+
+.userDetails button {
+  float: right;
+  background: #212529;
+  box-shadow: 0px 12px 20px 0px #212529;
+  border-radius: 10px;
+  padding: 2px 20px;
+  color: wheat;
+  margin-top: 5px;
+}
+
+/*-----USERDETAILS END-------*/
+
 
 .tododetails {
   border-radius: 15px;
-  box-shadow: 0px 0px 15px 0px;
-  background-color: #212529;
+  box-shadow: 0px 20px 18px 0px indigo;
+  background-color: saddlebrown;
+}
+
+.tododetails h3 {
+  text-shadow: 10px 8px #212529;
+    color: gold;
+}
+
+#addtodoinput {
+  width: 65% !important;
+  margin: 0 auto !important;
+  box-shadow: 0px 14px 8px -2px #212529;
+  text-align: center;
 }
 
 .addtodo {
@@ -22,9 +109,11 @@
 
 .addtodo i {
   position: absolute;
-  right: 5px;
+  right: 112px;
   bottom: 20px;
   border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0px 2px 13px 2px dimgrey;
 }
 
 .btnfilter {
@@ -33,28 +122,56 @@
   border: 1px solid #a52a2a;
 }
 
-.btnfilter:hover {
-  background: #a52a2a;
+.delete {
+  text-decoration: line-through !important;
+}
+
+.btnfilter {
+  box-shadow: 0px 5px 15px 5px inset;
+  background-color: darkred;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.btnfilter:hover, .filterbtn .active {
+  background-color: indigo;
   color: #ffffff;
   border: 1px solid #ffffff;
 }
 
 .fa-check-double {
-  padding: 8px 12px;
+  padding: 6px 8px;
   margin: 0px 5px;
   border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0px 6px 20px 0px #212529;
+  color: gold;
 }
 
 .fa-times {
-  padding: 8px 14px;
+  padding: 6px 10px;
   margin: 0px 5px;
   border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0px 6px 20px 0px #212529;
+  color: honeydew;
 }
 
 .fa-thumbs-up {
-  padding: 8px 12px;
+  padding: 6px 10px;
   margin: 0px 5px;
   border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0px 6px 20px 0px #212529;
+  color: forestgreen;
+}
+
+.displaytodo ul div {
+  box-shadow: 0px 15px 30px 2px var(--bs-dark);
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 li:nth-child(odd) {
@@ -62,9 +179,10 @@ li:nth-child(odd) {
 }
 
 .search {
-  width: 68%;
+  width: 65%;
   margin: 0 auto;
   text-align: center;
+  box-shadow: 0px 14px 8px -2px #212529;
 }
 
 ul {

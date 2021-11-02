@@ -39,9 +39,9 @@ function AddTodo(props) {
     return (
         <>
             <div className="row">
-                <div className="col-md-10 mx-auto text-center">
+                <div className="col-md-10 mx-auto text-center addTodosection">
                     <div className="form-group">
-                        <input type="text" onChange={(e) => handleChange(e)} value={Todo} className="form-control" placeholder="Enter Todo" />
+                        <input type="text" id="addtodoinput" onChange={(e) => handleChange(e)} value={Todo} className="form-control" placeholder="Enter Todo" />
                     </div>
 
                     <div className="form-group my-3 addtodo">

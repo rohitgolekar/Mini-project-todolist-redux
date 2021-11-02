@@ -31,17 +31,17 @@ function Login() {
     return (
         <>
              <div className="container my-5 py-5">
-                <div className="row">
-                    <div className="col-md-4 mx-auto bg-warning p-5 loginBox">
-                    <h4 className="text-center p-2 bg-danger text-white">Sign Up</h4>
+                <div className="row loginSection">
+                    <div className="col-md-4 mx-auto p-5 loginBox">
+                    <h4 className="text-center p-2">Sign Up</h4>
                         <div className="form-group my-3">
-                            <input className="form-control" type="text"  name="email" onChange={handleChange} placeholder="Enter Username" />
+                            <input className="form-control" type="text"  name="email" onChange={handleChange} placeholder="Enter Username" autoComplete="off" />
                         </div>
                         <div className="form-group my-3">
-                            <input className="form-control" type="password" name="password" onChange={handleChange} placeholder="Enter Password" />
+                            <input className="form-control" type="password" name="password" onChange={handleChange} placeholder="Enter Password" autoComplete="off" />
                         </div>
                         <div className="form-group mt-3 text-center">
-                            <button type="button" className="btn btn-danger" onClick={Login}>Login</button>
+                            <button type="button" className="btn btn-default" onClick={Login}>Login</button>
                         </div>
                     </div>
                 </div>
